@@ -9,8 +9,79 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="proyecto.android.ingesis.uniquindio.edu.co.campusuq.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Campus UQ"
+            android:id="@+id/textView"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="0.03" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="237dp"
+            android:layout_height="274dp"
+            android:layout_gravity="center_horizontal"
+            android:weightSum="1">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/imageView"
+                android:src="@mipmap/ic_launcher"
+                android:layout_weight="1.93" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="333dp"
+            android:layout_height="wrap_content">
+
+        </LinearLayout>
+
+        <Button
+            android:layout_width="184dp"
+            android:layout_height="wrap_content"
+            android:text="Directorio"
+            android:id="@+id/buttonDirectorio"
+            android:layout_weight="0.15" />
+
+        <Button
+            android:layout_width="141dp"
+            android:layout_height="wrap_content"
+            android:text="Noticias"
+            android:id="@+id/button"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="0.03" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.03"></LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="0.03">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ir a uniquindio"
+                android:id="@+id/button2" />
+        </LinearLayout>
+
+    </LinearLayout>
 </RelativeLayout>

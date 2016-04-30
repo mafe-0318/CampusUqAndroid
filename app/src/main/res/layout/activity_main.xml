@@ -13,9 +13,11 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:weightSum="1">
+        android:weightSum="1"
+        android:id="@+id/General"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true">
 
         <TextView
             android:layout_width="wrap_content"
@@ -42,58 +44,35 @@
         </LinearLayout>
 
         <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="333dp"
-            android:layout_height="wrap_content">
-
-        </LinearLayout>
-
-        <Button
-            android:layout_width="184dp"
-            android:layout_height="wrap_content"
-            android:text="Directorio"
-            android:id="@+id/buttonDirectorio"
-            android:layout_weight="0.15" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New Button"
-            android:id="@+id/button3"
-            android:layout_gravity="right"
-            android:layout_weight="0.03" />
-
-        <Button
-            android:layout_width="141dp"
-            android:layout_height="wrap_content"
-            android:text="Noticias"
-            android:id="@+id/button"
-            android:layout_gravity="center_horizontal"
-            android:layout_weight="0.03" />
-
-        <LinearLayout
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="0.03"></LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_weight="0.03">
+            android:layout_weight="0.64">
 
             <Button
-                android:layout_width="wrap_content"
+                android:layout_width="177dp"
                 android:layout_height="wrap_content"
-                android:text="Ir a uniquindio"
-                android:id="@+id/button2" />
+                android:text="Directorio"
+                android:id="@+id/buttonDirectorio"
+                android:layout_gravity="center_horizontal" />
 
-            
+            <Button
+                android:layout_width="173dp"
+                android:layout_height="wrap_content"
+                android:text="Noticias"
+                android:id="@+id/buttonNoticias"
+                android:layout_gravity="center_horizontal" />
+
+            <Button
+                android:layout_width="176dp"
+                android:layout_height="wrap_content"
+                android:text="Ir a Uniquindio"
+                android:id="@+id/buttonIr"
+                android:layout_gravity="center_horizontal" />
         </LinearLayout>
 
     </LinearLayout>
+
 </RelativeLayout>
 
 

@@ -4,7 +4,9 @@ import android.content.Context;
 import android.content.SharedPreferences;
 
 /**
- * Created by Cristian on 02/05/2016.
+ * Cristian jojoa
+ * Edwin tabares
+ * maria fernanda
  */
 public class Utilities {
 

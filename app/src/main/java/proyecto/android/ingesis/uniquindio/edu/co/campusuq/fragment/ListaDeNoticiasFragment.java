@@ -4,7 +4,6 @@ package proyecto.android.ingesis.uniquindio.edu.co.campusuq.fragment;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.location.GpsStatus;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -21,7 +20,6 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 
 import proyecto.android.ingesis.uniquindio.edu.co.campusuq.R;
-import proyecto.android.ingesis.uniquindio.edu.co.campusuq.activity.NoticiasActualesActivity;
 import proyecto.android.ingesis.uniquindio.edu.co.campusuq.util.AdaptadorDeNoticias;
 import proyecto.android.ingesis.uniquindio.edu.co.campusuq.util.Utilidades;
 import proyecto.android.ingesis.uniquindio.edu.co.campusuq.vo.Noticia;

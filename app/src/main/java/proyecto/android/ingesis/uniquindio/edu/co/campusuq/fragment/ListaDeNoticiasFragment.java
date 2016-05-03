@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -16,39 +17,22 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 
 import proyecto.android.ingesis.uniquindio.edu.co.campusuq.R;
+import proyecto.android.ingesis.uniquindio.edu.co.campusuq.util.AdaptadorDeNoticias;
+import proyecto.android.ingesis.uniquindio.edu.co.campusuq.vo.Noticia;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ListaDeNoticiasFragment extends Fragment implements AdaptadorDeNoticias.OnClickAdaptadorDeNoticias {
+public class ListaDeNoticiasFragment extends Fragment implements AdaptadorDeNoticias.OnClickAdaptadorDeNoticia {
 
 
 
-    private RecyclerView listadoDePeliculas ;
-
-    private ArrayList<Noticias> peliculas;
-
-    private AdaptadorDePelicula adaptador;
-
+    private RecyclerView listadoDeNoticias ;
+    private ArrayList<Noticia> noticias;
+    private AdaptadorDeNoticias adaptador;
     private OnPeliculaSeleccionadaListener listener;
 
-    public ListaDeNoticiasFragment() {
-        // Required empty public constructor
-    }
-    /**
-     * Metodo que permite obtener las peliculas de la lista
-     * @return las peliculas del arraylist
-     */
-    public ArrayList<Pelicula> getPeliculas() {
-        return peliculas;
-    }
-    /**
-     * Metodo que permite modificar las peliculas de la lista
-     * @param peliculas, arraylist de peliculas a introducir en la lista
-     */
-    public void setPeliculas(ArrayList<Pelicula> peliculas) {
-        this.peliculas = peliculas;
-    }
+
     /**
      * Metodo que nos permite realizar las inicializaciones los componentes de la actividad
      * @param savedInstanceState, objeto de tipo Bundle que nos permite compartir datos entre activiades
@@ -66,34 +50,29 @@ public class ListaDeNoticiasFragment extends Fragment implements AdaptadorDeNoti
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        peliculas = new ArrayList();
-        peliculas.add(new Pelicula("Interestelar", "2015"));
-        peliculas.add(new Pelicula("El Padrino", "2015"));
-        peliculas.add(new Pelicula("Regreso al futuro", "2015"));
-        peliculas.add(new Pelicula("Titanic", "2014"));
-        peliculas.add(new Pelicula("Star Wars", "2014"));
-        peliculas.add(new Pelicula("El bueno, el malo y el feo", "2014"));
-        peliculas.add(new Pelicula("La Pantera Rosa", "2015"));
-        peliculas.add(new Pelicula("Interestelar", "2015"));
-        peliculas.add(new Pelicula("El Padrino", "2015"));
-        peliculas.add(new Pelicula("Regreso al futuro", "2015"));
-        peliculas.add(new Pelicula("Titanic", "2014"));
-        peliculas.add(new Pelicula("Star Wars", "2014"));
-        peliculas.add(new Pelicula("El bueno, el malo y el feo", "2014"));
-        peliculas.add(new Pelicula("La Pantera Rosa", "2015"));
-        listadoDePeliculas= (RecyclerView) getView().findViewById(R.id.RecView);
+        noticias = new ArrayList();
+        noticias.add(new Noticia("Interestelar", "2015"));
+        noticias.add(new Noticia("El Padrino", "2015"));
+        noticias.add(new Noticia("Regreso al futuro", "2015"));
+        noticias.add(new Noticia("Titanic", "2014"));
+        noticias.add(new Noticia("Star Wars", "2014"));
+        noticias.add(new Noticia("El bueno, el malo y el feo", "2014"));
+        noticias.add(new Noticia("La Pantera Rosa", "2015"));
+        noticias.add(new Noticia("Interestelar", "2015"));
+        noticias.add(new Noticia("El Padrino", "2015"));
+        noticias.add(new Noticia("Regreso al futuro", "2015"));
+        noticias.add(new Noticia("Titanic", "2014"));
+        noticias.add(new Noticia("Star Wars", "2014"));
+        noticias.add(new Noticia("El bueno, el malo y el feo", "2014"));
+        noticias.add(new Noticia("La Pantera Rosa", "2015"));
+        listadoDeNoticias= (RecyclerView) getView().findViewById(R.id.RecView);
 
-        adaptador = new AdaptadorDePelicula(peliculas,this);
+        adaptador = new AdaptadorDeNoticias(noticias,this);
 
-        listadoDePeliculas.setAdapter(adaptador);
-        listadoDePeliculas.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
+        listadoDeNoticias.setAdapter(adaptador);
+        listadoDeNoticias.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
     }
-    /**
-     * Metodo que nos permite asociar el fragmento con un layout
-     * @param inflater, el layout para inflar el fragmento
-     * @param container, es la vista padre que contiene el fragmento.
-     * @param savedInstanceState, bundle que nos permite guar estados.
-     */
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -139,7 +118,7 @@ public class ListaDeNoticiasFragment extends Fragment implements AdaptadorDeNoti
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();if(id == R.id.menu_agregar) {
 
-            Utilidades.mostrarDialigoAgregarPelicula(getActivity().getSupportFragmentManager(), PeliculasActualesActivity.class.getSimpleName());
+            Utilidades.mostrarDialigoAgregarPelicula(getActivity().getSupportFragmentManager(), NoticiasActualesActivity.class.getSimpleName());
 
         } else if(id == R.id.menu_eliminar) {
             peliculas.remove(0);

@@ -20,13 +20,13 @@ import proyecto.android.ingesis.uniquindio.edu.co.campusuq.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ListaDeNoticiasFragment extends Fragment {
+public class ListaDeNoticiasFragment extends Fragment implements AdaptadorDeNoticias.OnClickAdaptadorDeNoticias {
 
 
 
     private RecyclerView listadoDePeliculas ;
 
-    private ArrayList<Pelicula> peliculas;
+    private ArrayList<Noticias> peliculas;
 
     private AdaptadorDePelicula adaptador;
 

@@ -1,9 +1,13 @@
-package proyecto.android.ingesis.uniquindio.edu.co.campusuq;
+package proyecto.android.ingesis.uniquindio.edu.co.campusuq.vo;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import proyecto.android.ingesis.uniquindio.edu.co.campusuq.R;
+import proyecto.android.ingesis.uniquindio.edu.co.campusuq.util.Utilities;
 
 /**
  * Clase principal
@@ -26,7 +30,11 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
         if (id == R.id.Lenguaje)
         {
+            Utilities.changeLanguage(this);
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
             return true;
+
         }
         return super.onOptionsItemSelected(item);
     }

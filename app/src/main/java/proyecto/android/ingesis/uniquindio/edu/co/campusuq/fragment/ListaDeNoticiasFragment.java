@@ -98,7 +98,7 @@ public class ListaDeNoticiasFragment extends Fragment implements AdaptadorDeNoti
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_lista_de_noticias, container, false);
+        return inflater.inflate(R.layout.fragment_lista_de_noticia, container, false);
     }
     /**
      * Metodo que nos permite asociar el fragmento a una actividad

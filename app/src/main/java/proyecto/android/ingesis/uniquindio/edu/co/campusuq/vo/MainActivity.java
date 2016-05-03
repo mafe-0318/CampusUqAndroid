@@ -7,7 +7,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import proyecto.android.ingesis.uniquindio.edu.co.campusuq.R;
-import proyecto.android.ingesis.uniquindio.edu.co.campusuq.util.Utilities;
 
 /**
  * Clase principal

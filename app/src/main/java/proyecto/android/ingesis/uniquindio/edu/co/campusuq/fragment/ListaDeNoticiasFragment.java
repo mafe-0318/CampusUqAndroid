@@ -4,6 +4,7 @@ package proyecto.android.ingesis.uniquindio.edu.co.campusuq.fragment;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.location.GpsStatus;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -14,10 +15,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+
 import java.util.ArrayList;
 
 import proyecto.android.ingesis.uniquindio.edu.co.campusuq.R;
+import proyecto.android.ingesis.uniquindio.edu.co.campusuq.activity.NoticiasActualesActivity;
 import proyecto.android.ingesis.uniquindio.edu.co.campusuq.util.AdaptadorDeNoticias;
+import proyecto.android.ingesis.uniquindio.edu.co.campusuq.util.Utilidades;
 import proyecto.android.ingesis.uniquindio.edu.co.campusuq.vo.Noticia;
 
 /**
@@ -30,7 +34,7 @@ public class ListaDeNoticiasFragment extends Fragment implements AdaptadorDeNoti
     private RecyclerView listadoDeNoticias ;
     private ArrayList<Noticia> noticias;
     private AdaptadorDeNoticias adaptador;
-    private OnPeliculaSeleccionadaListener listener;
+    private OnNoticiaSeleccionadaListener listener;
 
 
     /**
@@ -116,47 +120,28 @@ public class ListaDeNoticiasFragment extends Fragment implements AdaptadorDeNoti
      */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();if(id == R.id.menu_agregar) {
+        int id = item.getItemId();
 
-            Utilidades.mostrarDialigoAgregarPelicula(getActivity().getSupportFragmentManager(), NoticiasActualesActivity.class.getSimpleName());
-
-        } else if(id == R.id.menu_eliminar) {
-            peliculas.remove(0);
-            adaptador.notifyItemRemoved(0);
-        } else if(id == R.id.menu_modificar) {
-            Pelicula aux = peliculas.get(1);
-            peliculas.set(1, peliculas.get(2));
-            peliculas.set(2, aux);
-            adaptador.notifyItemMoved(1, 2);
-        }else if(id == R.id.cambiar_idioma) {
-            Utilidades.cambiarIdioma(getContext());
+      if(id == R.id.Lenguaje) {
+          Utilidades.cambiarIdioma(getContext());
             Intent intent = getActivity().getIntent();
-            getActivity().finish();
-            startActivity(intent);
-            return true;
+          getActivity().finish();
+          startActivity(intent);
+          return true;
         }
 
         return super.onOptionsItemSelected(item);
     }
-    /**
-     * Metodo utlizado identificar la pelicula seleccionada
-     * @param pos, la posicion presionada
-     */
+
     @Override
     public void onClickPosition(int pos) {
-        listener.onPeliculaSeleccionada(pos);
-    }
-    /**
-     * Metodo utlizado para agregar una pelicula
-     * @param pelicula, la pelicula que va ser agregada
-     */
-    public void agregarPelicula(Pelicula pelicula){
-        peliculas.add(0, pelicula);
-        adaptador.notifyItemInserted(0);
+        listener.onNoticiaSeleccionada(pos);
     }
 
-    public interface OnPeliculaSeleccionadaListener {
-        void onPeliculaSeleccionada(int position);
+
+    public interface OnNoticiaSeleccionadaListener
+    {
+        void onNoticiaSeleccionada(int position);
     }
 
 

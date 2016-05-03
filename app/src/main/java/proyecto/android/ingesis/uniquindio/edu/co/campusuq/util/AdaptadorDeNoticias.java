@@ -1,5 +1,6 @@
 package proyecto.android.ingesis.uniquindio.edu.co.campusuq.util;
 
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -32,7 +33,7 @@ public class AdaptadorDeNoticias extends RecyclerView.Adapter<AdaptadorDeNoticia
 
     @Override
     public noticiaViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.resumen_de_noticia,parent,false);
+        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.resumen_de_noticia, parent, false);
         noticiaViewHolder noticiaVH = new noticiaViewHolder(itemView);
         return noticiaVH;
     }

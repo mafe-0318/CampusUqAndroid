@@ -8,6 +8,8 @@ import android.location.GpsStatus;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -97,7 +99,7 @@ public class ListaDeNoticiasFragment extends Fragment implements AdaptadorDeNoti
             activity = (Activity) context;
 
             try {
-                listener= (OnPeliculaSeleccionadaListener) activity;
+                listener= (OnNoticiaSeleccionadaListener) activity;
             } catch (ClassCastException e) {
                 throw new ClassCastException(activity.toString() + " debe implementar la interfaz OnPeliculaSeleccionadaListener");
             }
